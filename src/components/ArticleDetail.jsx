@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getArticleById } from '../../api';
+import CommentSection from './CommentSection';
 import styles from './ArticleDetail.module.css';
 
 const ArticleDetail = () => {
@@ -50,7 +51,7 @@ const ArticleDetail = () => {
     </div>
   );
 
-  // Formatting the date
+  // Format the date
   const formattedDate = new Date(article.created_at).toLocaleDateString('en-GB', {
     day: 'numeric',
     month: 'long',
@@ -100,6 +101,9 @@ const ArticleDetail = () => {
           </div>
         </div>
       </footer>
+
+      {/* Comments section */}
+      <CommentSection article_id={article_id} />
     </article>
   );
 };
