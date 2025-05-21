@@ -24,10 +24,8 @@ const ArticlesList = ({ topic }) => {
         });
     }, [topic]);
   
-    // Show loading spinner while fetching
     if (loading) return <p>Loading...</p>;
     
-    // Show error message if fetching fails
     if (error) return <p>Error...Something went wrong!!!</p>;
   
     return (
